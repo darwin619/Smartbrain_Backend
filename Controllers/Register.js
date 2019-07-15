@@ -29,7 +29,7 @@
 	.then(trx.commit)
 	.catch(trx.rollback)
 	})
-	.catch(err => res.status(404).json('User Already Registered'))
+	.catch(err => res.status(404).json('Cant register user'))
 }
 
 module.exports = {
