@@ -42,8 +42,8 @@ app.post('/imageurl', (req, res) => image.handleApiCall(req, res));
 //Dependency Injection
 	
 
-app.listen(3000, () => {
-	console.log('App is running on 3000 port')
+app.listen(process.env.PORT || 3000, () => {
+	console.log('App is running on ${process.env.PORT}')
 })
 
 
