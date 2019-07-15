@@ -42,8 +42,9 @@ app.post('/imageurl', (req, res) => image.handleApiCall(req, res));
 //Dependency Injection
 	
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log('App is running on ${process.env.PORT}')
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+    console.log(`Smart Brain API Server is running on port ${PORT}`)
 })
 
 
