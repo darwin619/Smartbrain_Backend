@@ -24,7 +24,7 @@ const imageHandle = (req, res, db) => {
 		.catch(err => res.status(404).json('Cant Update'))
 }
 
-const historyHandle = (req, res, db) = {
+const historyHandle = (req, res, db) => {
 
 	const {id, url, celeb} = req.body;
 	db('history').insert({imageurl: imageLink, celebname: celeb})
