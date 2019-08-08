@@ -4,11 +4,14 @@ const app = new Clarifai.App({
  apiKey: 'ed1f92a43baf4112b2940717d44abe65',
 });
 
-const handleApiCall = (req, res) => {
-app.models
-.predict(e466caa0619f444ab97497640cefc4dc, req.body.input)
-.then(data => res.json(data))
-.catch(err => res.json(err))
+const handleApiCall = (req,res) => {
+	app.models
+		.predict("e466caa0619f444ab97497640cefc4dc", req.body.input)
+		.then(data=> {
+			res.json(data);
+		})
+		.catch(err=> res.status(400).json(err))
+
 }
 
 const imageHandle = (req, res, db) => {
