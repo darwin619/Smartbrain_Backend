@@ -24,7 +24,24 @@ const imageHandle = (req, res, db) => {
 		.catch(err => res.status(404).json('Cant Update'))
 }
 
+const historyHandle = (req, res, db) = {
+
+	const {id, url, celeb} = req.body;
+	db('history').insert({imageurl: imageLink, celebname: celeb})
+	.catch(err=>console.log(err))
+
+	db.select().from('history').where('id', '=', id)
+	.then(result => res.json(result))
+	.catch(err=> res.status(400).json('no search queries found'))
+}
+
+
 module.exports = {
 	imageHandle: imageHandle,
-	handleApiCall: handleApiCall
+	handleApiCall: handleApiCall,
+	historyHandle: historyHandle
 };
+
+
+
+// create table history(id serial primary key, imageurl varchar not null, celebname varchar not null);

@@ -38,6 +38,8 @@ app.put('/image', (req, res) => image.imageHandle(req, res, db));
 
 app.post('/imageurl', (req, res) => image.handleApiCall(req, res));
 
+app.post('/history', (req, res) => image.historyHandle(req, res, db));
+
 //Dependency Injection
 	
 
