@@ -27,7 +27,7 @@ const imageHandle = (req, res, db) => {
 const historyHandle = (req, res, db) => {
 
 	const {id, imageLink, celeb} = req.body;
-	db('history').insert({imageurl: imageLink, celebname: celeb})
+	db('history').insert({imageurl: imageLink, celebname: celeb, id: id})
 	.catch(err=>console.log(err))
 
 	db.select().from('history').where('id', '=', id)
