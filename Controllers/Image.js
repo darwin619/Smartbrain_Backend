@@ -26,7 +26,7 @@ const imageHandle = (req, res, db) => {
 
 const historyHandle = (req, res, db) => {
 
-	const {id, url, celeb} = req.body;
+	const {id, imageLink, celeb} = req.body;
 	db('history').insert({imageurl: imageLink, celebname: celeb})
 	.catch(err=>console.log(err))
 
